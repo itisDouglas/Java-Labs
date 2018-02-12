@@ -1,0 +1,78 @@
+import java.util.Scanner;
+public class PositiveNegative {
+
+	public static void main(String[] args) {
+		//this is my scanner object
+		Scanner input = new Scanner(System.in);
+		
+		//here are my declarations including counters
+		int userInput = 0;
+		int count = 0;
+		int counterUserInput = 0;
+		int zeroCounter = 0;
+		int positiveCounter = 0;
+		int negativeCounter = 0;
+		
+		
+		//this is my header
+		System.out.println("          Positive and Negative Numbers");
+		
+		//this is the beginning of my do while
+		do
+		{
+		//here, I am asking the user to enter a number between 5 and 10
+		System.out.println("Enter the total amount of integers to be entered: \n"
+				+ "Must be between 5 and 10: ");
+		userInput = input.nextInt();
+		//an if statement to check for numbers less than 5 or greater than 10
+		if (userInput > 10 || userInput < 5)
+		{
+			System.out.println("Enter the total amount of integers to be entered: \n"
+					+ "Must be between 5 and 10: ");
+			userInput = input.nextInt();
+		}
+		
+		}
+		//my do-while loop ends here
+		while (userInput > 10 || userInput < 5);
+			
+		//this is my for statement
+		for (int i = 1; i <= userInput; i++)
+		{
+			//output the number of entries between 5 and 10 the user selected
+			System.out.print("Enter number " + i + ":    ");
+			counterUserInput = input.nextInt();
+			count++;
+			//I need three counters here aside from count++
+			//this if statement accumulates my zeroCounter if there's a zero
+			if (counterUserInput == 0)
+			{
+				zeroCounter++;
+			}
+			//this else if statement accumulates my positiveCounter if there's a 
+			//positive number
+			else if (counterUserInput > 1)
+			{
+				positiveCounter++;
+			}
+			//this else statement accumulates my negativeCounter if there's a 
+			//negative number
+			else
+			{
+				negativeCounter++;
+			}
+			
+			
+			
+		}
+		//here, I output all the integer values of my counters
+		System.out.println("Total zero: " + zeroCounter);
+		System.out.println("Total positive integers: " + positiveCounter);
+		System.out.println("Total negative integers: " + negativeCounter);
+		
+		
+		
+		
+	}
+
+}
