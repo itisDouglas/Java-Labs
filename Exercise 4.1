@@ -1,0 +1,62 @@
+import java.util.Scanner;
+public class ReadingMixedIntegers {
+
+	public static void main(String[] args) {
+		
+		//this is my scanner object
+		Scanner input = new Scanner(System.in);
+		
+		//these are my variable declarations
+		int max;
+		int count = 1;
+		int tempVal;
+		int sentinel = 0;
+		//header output
+		System.out.println("           Find the maximum number");
+		//first prompt to the user
+		System.out.print("\nEnter an integer (0 ends the input): ");
+		max = input.nextInt();
+		
+		
+		//my while loop to check the user hasn't entered the sentinel value I set
+		while (max != sentinel)
+		{
+			//second prompt who's value will be used in various for loops
+			System.out.print("Enter an integer (0 ends the input): ");
+			tempVal = input.nextInt();
+			//checking to see if the tempVal is greater than the max variable
+			if (max < tempVal)
+			{
+				//if it is, I'll assign max to have the tempVal
+				max = tempVal;
+				
+			}
+			//otherwise, keep adding to the counter if max is the same as tempVal
+			else if (max == tempVal)
+			{
+				count++;
+			}
+			//this is where I'm checking to see if the user at any moment types 0
+			//0 is the variable called sentinel
+			if (tempVal == sentinel)
+			{
+				System.out.println("\nThe maximum number is " + max);
+				System.out.println("The count for the max number is " + count);
+				//using keyword break, I break the code if my evaluation reaches
+				//this code brace
+				break;
+			}
+			
+		}
+		
+		//this if statements executes if the while loop above is false
+		
+		if (max == sentinel)
+		{
+			System.out.println("No numbers are entered except " + sentinel);
+		}
+		
+
+	}
+
+}
